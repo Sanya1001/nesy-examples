@@ -1,5 +1,0 @@
-problog
-torchvision
-setuptools
-torch
-pysdd
