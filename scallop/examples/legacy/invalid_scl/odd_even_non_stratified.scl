@@ -1,5 +1,0 @@
-rel num = {(0), (1), (2), (3), (4), (5)}
-
-rel even(0)
-rel odd(x + 1) = even(x)
-rel even(x) = num(x), ~odd(x)

@@ -1,7 +1,0 @@
-node_modules
-package-lock.json
-Cargo.toml
-binding.gyp
-bindings
-src
-tree-sitter

@@ -1,4 +1,0 @@
-@demand("bbf")
-rel range(a, b, i) = a == i
-rel range(a, b, i) = range(a, b, i - 1), i < b
-query range(1, 4, x)

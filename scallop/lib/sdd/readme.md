@@ -1,1 +1,0 @@
-# Sentential Decision Diagram (SDD)

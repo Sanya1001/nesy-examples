@@ -1,2 +1,0 @@
-rel something = {("a", 1), ("b", 2)}
-query something(3, _)

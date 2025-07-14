@@ -1,2 +1,0 @@
-type digit_a(usize), digit_b(usize)
-rel sum_2(a + b) = digit_a(a), digit_b(b)

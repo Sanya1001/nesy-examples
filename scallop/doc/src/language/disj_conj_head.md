@@ -1,1 +1,0 @@
-# Disjunctive and Conjunctive Head

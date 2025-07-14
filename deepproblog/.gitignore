@@ -250,8 +250,8 @@ src/deepproblog/examples/CLUTRR/data/data_db9b8f04/
 src/deepproblog/examples/Coins/data/image_data/
 src/deepproblog/examples/CoinUrn/data/image_data/
 src/deepproblog/examples/CoinUrn/data/train_10000/
-src/deepproblog/examples/MNIST/data/MNIST
-src/deepproblog/examples/MNIST/log/
+MNIST/data/MNIST
+MNIST/log/
 src/deepproblog/examples/Poker/cache/
 src/deepproblog/examples/Poker/data/cards/rendered/
 src/deepproblog/examples/Poker/data/images/

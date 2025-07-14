@@ -1,2 +1,0 @@
-input tuple(usize, &str)
-rel result(a, b) :- tuple(a, b), a != b

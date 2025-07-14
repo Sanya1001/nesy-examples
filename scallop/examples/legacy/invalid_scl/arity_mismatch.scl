@@ -1,2 +1,0 @@
-type edge(a: usize, b: usize)
-rel path(a, b) :- edge(a, b, c), edge(a)

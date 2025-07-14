@@ -1,1 +1,0 @@
-query something(a + b, a - b, b)

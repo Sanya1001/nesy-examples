@@ -1,3 +1,0 @@
-type name <: String
-type student_name <: String
-type student_name <: Name
