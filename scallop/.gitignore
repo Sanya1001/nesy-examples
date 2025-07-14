@@ -1,0 +1,18 @@
+# Rust and compilation
+target
+/.tmp
+/Cargo.lock
+
+# MacOS
+.DS_Store
+
+# Python
+/.env
+__pycache__
+
+# VSCode
+/.vscode
+
+# Scallop
+*.sclcmpl
+/.scllog
