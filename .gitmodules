@@ -1,0 +1,3 @@
+[submodule "DomiKnowS"]
+	path = DomiKnowS
+	url = https://github.com/HLR/DomiKnowS.git
