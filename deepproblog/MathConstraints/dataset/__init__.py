@@ -36,7 +36,6 @@ class MathConstraintsEMB(Mapping[Term, torch.Tensor]):
             yield emb
 
 
-# TODO: Complete this function
 class MathConstraintsDataset(Dataset, TorchDataset):
 
     def __init__(self, subset, data_file):
