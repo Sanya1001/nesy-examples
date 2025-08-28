@@ -1,18 +1,15 @@
 import os
 os.environ["SWI_HOME_DIR"] = "/opt/homebrew/opt/swi-prolog/libexec"
-from json import dumps
 
 import torch
 
 from deepproblog.dataset import DataLoader
-from deepproblog.engines import ApproximateEngine, ExactEngine
+from deepproblog.engines import ExactEngine
 from deepproblog.evaluate import get_confusion_matrix
-from deepproblog.examples.MNIST.data import MNIST_train, MNIST_test, addition
-from deepproblog.examples.MNIST.network import MNIST_Net
 from deepproblog.model import Model
 from deepproblog.network import Network
 from deepproblog.train import train_model
-from dataset import MathConstraintsEMB, MathConstraintsDataset
+from MathConstraints.dataset import MathConstraintsEMB, MathConstraintsDataset
 
 
 # 1. Define Pytorch Network
@@ -40,7 +37,7 @@ class RelationNN(torch.nn.Module):
             torch.nn.Sigmoid(),
             torch.nn.Linear(512, 512),
             torch.nn.ReLU(),
-            torch.nn.Linear(512, 512))
+            torch.nn.Linear(512, 2))
         self.softmax = torch.nn.Softmax(dim=1)
 
     def forward(self, l, r):
@@ -65,11 +62,11 @@ for net in (property_nn1, property_nn2, relation_nn1, relation_nn2):
 # 3. Setting up Model
 model = Model("math.pl", [property_nn1, property_nn2, relation_nn1, relation_nn2])
 model.set_engine(ExactEngine(model), cache=True)
-model.add_tensor_source("train", MathConstraintsEMB("dataset/train.json"))
-model.add_tensor_source("test", MathConstraintsEMB("dataset/test.json"))
+model.add_tensor_source("train", MathConstraintsEMB("../dataset/train.json"))
+model.add_tensor_source("test", MathConstraintsEMB("../dataset/test.json"))
 
-train_dataset = MathConstraintsDataset("train", "dataset/train.json")
-test_dataset = MathConstraintsDataset("test", "dataset/test.json")
+train_dataset = MathConstraintsDataset("train", "../dataset/train.json")
+test_dataset = MathConstraintsDataset("test", "../dataset/test.json")
 print(len(train_dataset))
 # Train the model
 loader = DataLoader(train_dataset, 2, False)
