@@ -1,27 +1,20 @@
 import sys
-sys.path.append('../../')
+sys.path.append('../../../')
 
 import logging
 logging.basicConfig(level=logging.INFO)
 
 from data import get_readers
-from functools import partial
 import torch
 from tqdm import tqdm
 from sklearn.metrics import classification_report
-from operator import itemgetter
 from domiknows.program import IMLProgram, SolverPOIProgram
 from domiknows.program.callbackprogram import hook
-from domiknows.program.lossprogram import PrimalDualProgram, SampleLossProgram
-from domiknows.program.metric import MacroAverageTracker, PRF1Tracker, DatanodeCMMetric
-from domiknows.program.model.pytorch import SolverModel
-from domiknows.program.loss import NBCrossEntropyLoss, NBCrossEntropyIMLoss, BCEWithLogitsIMLoss
 from domiknows import setProductionLogMode
 import os
-from itertools import chain
 import argparse
 
-from model import build_program, NBSoftCrossEntropyIMLoss, NBSoftCrossEntropyLoss
+from model import build_program, NBSoftCrossEntropyLoss
 import config
 
 # build configs from command line args

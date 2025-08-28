@@ -6,7 +6,7 @@ import torch
 torch.manual_seed(10)
 
 from torchvision import datasets, transforms
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 from torch.nn import Flatten
 
 import config
