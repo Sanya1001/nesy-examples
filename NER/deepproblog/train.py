@@ -57,15 +57,15 @@ for net in (pn1, pn2, pn3, wn1, wn2, wn3):
 # 3) Build the Problog Model
 # --------------------
 
-model = Model("ner.pl", [pn1, pn2, pn3, wn1, wn2, wn3])
+model = Model("nesy-examples/NER/deepproblog/ner.pl", [pn1, pn2, pn3, wn1, wn2, wn3])
 model.set_engine(ExactEngine(model), cache=True)
 
 # --------------------
 # 4) Load your datasets
 # --------------------
 
-model.add_tensor_source("train", JSONDataset("dataset/train.json"))
-model.add_tensor_source("test", JSONDataset("dataset/test.json"))
+model.add_tensor_source("train", JSONDataset("nesy-examples/NER/dataset/train.json"))
+model.add_tensor_source("test", JSONDataset("nesy-examples/NER/dataset/test.json"))
 
 train_dataset = JSONDataOperator("train")
 test_dataset = JSONDataOperator("test")
@@ -80,4 +80,4 @@ train.logger.comment(json.dumps(model.get_hyperparameters()))
 train.logger.comment(
     "Accuracy {}".format(get_confusion_matrix(model, test_dataset, verbose=1).accuracy())
 )
-train.logger.write_to_file("log.txt")
+# train.logger.write_to_file("log.txt")

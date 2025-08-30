@@ -47,8 +47,8 @@ class JSONDataset(TorchDataset):
             yield self.data[idx]
 
 datasets = {
-    "train": JSONDataset("dataset/train.json"),
-    "test": JSONDataset("dataset/test.json"),
+    "train": JSONDataset("nesy-examples/NER/dataset/train.json"),
+    "test": JSONDataset("nesy-examples/NER/dataset/test.json"),
 }
 
 class JSONDataOperator(Dataset, TorchDataset):
