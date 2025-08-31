@@ -35,7 +35,7 @@ class MathConstraintsDataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         # Get two data points
         obj1 = self.data[idx]['obj_emb'][0]
-        obj2 = self.data[idx]['obj_emb'][0]
+        obj2 = self.data[idx]['obj_emb'][1]
         label = self.data[idx]['condition_label']
         logic_order = [int(self.data[idx]['logic_order'][0][-1]),
                        int(self.data[idx]['logic_order'][1][-1]),
